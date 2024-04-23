@@ -6,7 +6,6 @@ public class Triangle {
             if (a + b <= c || a + c <= b || b + c <= a) {
                 return "NotATriangle";
             }
-
             // Kiểm tra tam giác đều
             if (a == b && b == c) {
                 return "Equilateral";
@@ -22,5 +21,9 @@ public class Triangle {
             // Các trường hợp còn lại là tam giác thường
             return "Scalene";
         }
+
+    public static void main(String[] args) {
+
+    }
     }
 
