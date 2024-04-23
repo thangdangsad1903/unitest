@@ -11,7 +11,6 @@ public class Triangle {
             if (a == b && b == c) {
                 return "Equilateral";
             }
-
             // Kiểm tra tam giác cân
             if (a == b || b == c || a == c) {
                 return "Isosceles";
