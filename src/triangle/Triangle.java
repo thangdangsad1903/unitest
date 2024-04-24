@@ -1,29 +1,38 @@
 package triangle;
 
-public class Triangle {
-        public static String determineTriangleType(int a, int b, int c) {
-            // Kiểm tra điều kiện tam giác không phải là tam giác
-            if (a + b <= c || a + c <= b || b + c <= a) {
-                return "NotATriangle";
-            }
-            // Kiểm tra tam giác đều
-            if (a == b && b == c) {
-                return "Equilateral";
-            }
-            // Kiểm tra tam giác cân
-            if (a == b || b == c || a == c) {
-                return "Isosceles";
-            }
-            // Kiểm tra tam giác vuông
-            if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
-                return "RightTriangle";
-            }
-            // Các trường hợp còn lại là tam giác thường
-            return "Scalene";
+import java.util.Scanner;
+
+    public  class Triangle {
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Nhập ba cạnh của tam giác
+            System.out.print("Nhập cạnh thứ nhất: ");
+        int canh1 = sc.nextInt();
+            System.out.print("Nhập cạnh thứ hai: ");
+        int canh2 = sc.nextInt();
+            System.out.print("Nhập cạnh thứ ba: ");
+        int canh3 = sc.nextInt();
+
+
+        // Kiểm tra tính hợp lệ của ba cạnh
+            if (canh1 <= 0 || canh2 <= 0 || canh3 <= 0 || canh1 + canh2 <= canh3 || canh2 + canh3 <= canh1 || canh1 + canh3 <= canh2) {
+            System.out.println("Ba cạnh không hợp lệ để tạo thành tam giác.");
+            return;
         }
 
-    public static void main(String[] args) {
+        // Xác định loại tam giác
+        String loaiTamGiac;
+            if (canh1 == canh2 && canh2 == canh3) {
+            loaiTamGiac = "Tam giác đều";
+        } else if (canh1 == canh2 || canh2 == canh3 || canh1 == canh3) {
+            loaiTamGiac = "Tam giác cân";
+        } else {
+            loaiTamGiac = "Tam giác thường";
+        }
 
+        // In ra kết quả
+            System.out.println("Loại tam giác: " + loaiTamGiac);
     }
-    }
+
+}
 
